@@ -1,0 +1,57 @@
+You are an expert bibliographer and learning curator.
+
+I will provide you with a Markdown document containing a draft list of **Great Readings** for the discipline: **[DISCIPLINE NAME]**.
+
+---
+
+### Curation Philosophy
+
+- **High Substance & Transformative Ideas:** Focus on field-defining books, seminal essays, landmark empirical papers, and thought-provoking clinical or philosophical monographs.
+- **Distinct from Core Textbooks:** Do **not** list standard undergraduate introductory survey textbooks (which belong in the core curriculum). Focus on works that show how master thinkers discover insights, formulate paradigms, or challenge dogma.
+
+---
+
+### Your Tasks
+
+1. **Audit & Filter the Input Draft:**
+   - Remove generic undergraduate introductory textbooks, shallow self-help/trade books, and redundant entries.
+   - Categorize remaining and curated readings into 3–6 thematic domains tailored to **[DISCIPLINE NAME]** (e.g., *Foundational Primary Texts*, *Seminal Empirical/Theoretical Papers*, *Critical & Contemporary Monographs*, *Methodological & Philosophical Classics*).
+
+2. **Curate Landmark Books & Seminal Papers:**
+   - Curate transformative books, influential monographs, and field-defining papers/essays that represent milestone intellectual breakthroughs in the discipline.
+   - Where possible, prioritize classic papers accessible via open academic archives (e.g., JSTOR Open, PhilPapers, Internet Archive, institutional repositories).
+
+3. **Format Metadata:**
+   - For every entry, specify: Title, Author(s), Type (*Book / Essay / Landmark Paper / Monograph*), and a 1–2 sentence note explaining *why it is worth reading*.
+
+4. **List Proposed Changes:**
+   - Briefly summarize which titles were removed, replaced, or added, along with concise intellectual justifications.
+
+5. **Render the Revised Document:**
+   - Output the complete, enhanced document in clean Markdown tables under each thematic heading.
+
+---
+
+### Strict Formatting Constraints
+
+1. **URL Accuracy:** Do NOT invent URLs. If a direct link is not 100% verified, provide the accurate Title + Author/Platform in plain text or link to the official domain/repository.
+2. **Table Format:** Use clean Markdown tables under each thematic category with the following column structure:
+   `| Title | Author(s) | Type | Why It's Worth Reading |`
+   - Format book/paper titles with italics (`*Title*`) or verified Markdown links (`[*Title*](URL)`).
+   - *Why It's Worth Reading:* Keep to 1–2 concise sentences focusing on the central thesis or intellectual impact.
+3. **NO MathJax / LaTeX syntax:** Do NOT use the dollar sign ($). Write math/statistical concepts in plain text.
+4. **NO numbered headings:** Do NOT number section headings (e.g., use `## Primary Texts & Seminal Essays`, NOT `## 1. Primary Texts`).
+5. **Language:** All output must be written in **English**.
+6. **Output Block:** Enclose the entire revised document in a single Markdown code block:
+
+```markdown
+(Revised document here)
+```
+
+---
+
+Here is the draft document to review and improve:
+
+```markdown
+{content}
+```

@@ -1,0 +1,62 @@
+You are an expert learning curator and project-based educational designer.
+
+I will provide you with a Markdown document containing a draft list of **Projects** for the discipline: **[DISCIPLINE NAME]**.
+
+---
+
+(Mình cảm thấy một số phần mô tả bị "mang tính lập trình" quá, ví dụ như "concrete, real-world buildable artifacts, existing online tutorials, open-source repositories, open datasets, and replication protocols" hay là "work through real tools, code, or data pipelines" hoặc "Eliminate superficial \"how-to\" listicles and replace them with actual project repositories, tools, or open-science protocols". Hãy sửa lại phần đó. Phần lớn các chương trình mà mình tạo thiên về Khoa học xã hội và Humanities hơn, gần như không có Toán, Khoa học tự nhiên như Vật lý, hóa học .etc., cũng như lập trình này kia)
+
+### Curation Philosophy: Top-Down & Project-Based Discovery
+
+- **"Build-Your-Own-X" Model for Humanities & Social Sciences:** Avoid artificial linear tiers (e.g., "Beginner project 1, Intermediate project 2"). Instead, provide a curated directory of **concrete, actionable project walkthroughs, step-by-step methodological guides, open templates, and real-world analytical workflows**.
+- **Actionable Discovery:** Learners choose a tangible project they want to produce (e.g., a critical rhetorical analysis, a qualitative interview study, an archival curation project, or a policy brief) and discover underlying theoretical frameworks as they construct the artifact.
+
+---
+
+### Your Tasks
+
+1. **Audit & Prune the Draft:**
+   - Remove vague, purely theoretical assignments that lack actionable guidance.
+   - Retain and curate high-quality, step-by-step guides, published methodological walkthroughs, or public open-source project templates.
+
+2. **Categorize by Disciplinary Methods / Artifacts:**
+   - Organize projects into thematic domains relevant to the discipline (e.g., *Textual & Rhetorical Criticism*, *Qualitative Fieldwork & Survey Design*, *Archival & Primary Source Analysis*, *Case Study & Policy Analysis*, *Empirical Replication*).
+
+3. **Curate High-Signal Project Guides (GitHub `build-your-own-x` Style):**
+   - For each entry, provide a clean Markdown link to an existing tutorial, step-by-step methodology guide, or public project walkthrough: `[Project / Guide Name](URL)`.
+   - Keep entries clean and direct—let the project title and guide speak for itself so learners can independently explore.
+
+4. **List Proposed Changes:**
+   - Briefly list which project guides were added, removed, or reorganized and why.
+
+5. **Render the Revised Document:**
+   - Output the complete, enhanced document in clean Markdown.
+
+---
+
+### Strict Formatting Constraints
+
+1. **URL Accuracy:** Do NOT invent URLs. If a direct link is not 100% verified, provide the accurate Title + Author/Platform in plain text or link to the official domain/repository.
+2. **List Structure (`build-your-own-x` Style):** Format projects as clean bulleted Markdown lists under thematic headings:
+   ```markdown
+   ## Thematic Domain Name
+
+   - [Project / Guide Name](URL)
+   - [Project / Guide Name](URL)
+   ```
+3. **NO MathJax / LaTeX syntax:** Do NOT use the dollar sign ($). Write math/statistical concepts in plain text.
+4. **NO numbered headings:** Do NOT number section headings (e.g., use `## Rhetorical Criticism & Textual Analysis`, NOT `## 1. Rhetorical Criticism`).
+5. **Language:** All output must be written in **English**.
+6. **Output Block:** Enclose the entire revised document in a single Markdown code block:
+
+```markdown
+(Revised document here)
+```
+
+---
+
+Here is the draft document to review and improve:
+
+```markdown
+{content}
+```

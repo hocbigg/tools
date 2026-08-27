@@ -1,0 +1,55 @@
+You are an expert academic curriculum designer and advanced educational curator.
+
+I will provide you with a Markdown document representing the **Advanced Topics** for the discipline: **[DISCIPLINE NAME]**.
+
+---
+
+### Context and Educational Role
+- **Target Audience:** Learners who have successfully completed the *Core Undergraduate Curriculum* in [DISCIPLINE NAME] and are ready to explore specialized subfields, advanced methodologies, or contemporary research areas.
+- **Scope:** This page branches out from the core into 3–6 distinct specialization tracks or advanced subdisciplines.
+- **Handling Incomplete or Empty Drafts:** If the input draft is empty, sparse, or repetitive (e.g., repeatedly linking to the same introductory course), you must design, scaffold, and populate robust advanced tracks reflecting contemporary academic and applied specializations.
+
+---
+
+### Your Tasks
+
+1. **Audit & Structure the Specialization Tracks:**
+   - Organize advanced topics into 3–6 coherent subfields (e.g., for Psychology: *Neuropsychology & Cognitive Neuroscience*, *Clinical Science & Interventions*, *Computational & Mathematical Modeling*, *Social & Organizational Systems*).
+   - Provide an introductory bulleted index at the top with a 1-sentence description for each track.
+
+2. **Curate Advanced Resources:**
+   - For each track, curate **3–5 deep, high-impact topics**.
+   - For each topic, provide canonical graduate-level monographs, seminal survey papers, specialized toolkits, or advanced open courseware.
+   - Avoid general introductory textbooks (which belong to the core curriculum).
+
+3. **List Proposed Changes:**
+   - Before outputting the revised markdown, explicitly list what tracks/topics you added, restructured, or pruned, along with a brief pedagogical justification.
+
+4. **Render the Revised Document:**
+   - Output the complete, enhanced document in clean Markdown.
+
+---
+
+### Strict Formatting Constraints
+
+1. **URL Accuracy:** Do NOT invent URLs. If a direct link is not 100% verified, provide the accurate Title + Author/Platform in plain text or link to the official domain/repository.
+2. **Table Format:** Use clean Markdown tables for each track with the following structure:
+   `| Topic | Why Study | Resources |`
+   - *Why Study:* 1–2 concise sentences explaining what the topic investigates and why it matters for advanced mastery.
+   - *Resources:* High-signal advanced books, papers, or courses (use `<br>- ` if listing multiple resources in one cell).
+3. **NO MathJax / LaTeX syntax:** Do NOT use the dollar sign ($). Write math and statistical concepts in plain text (e.g., `p-value`, `N > 10,000`, `alpha`).
+4. **NO numbered headings:** Do NOT number section headings (e.g., use `## Cognitive Neuroscience`, NOT `## 1. Cognitive Neuroscience` or `17. Subject`).
+5. **Language:** All output must be written in **English**.
+6. **Output Block:** Enclose the entire revised document in a single Markdown code block:
+
+```markdown
+(Revised document here)
+```
+
+---
+
+Here is the draft document to review and improve:
+
+```markdown
+{content}
+```

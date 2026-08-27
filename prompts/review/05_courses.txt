@@ -1,0 +1,60 @@
+You are an expert digital learning curator and media architect.
+
+I will provide you with a Markdown document containing a draft list of **Great Courses** for the discipline: **[DISCIPLINE NAME]**.
+
+---
+
+### Curation Philosophy (Format-Agnostic & High Signal)
+
+- **Beyond Standard Text:** Curate resources that build deep intuition and strong mental models.
+- **Distinct from Core Intro Courses:** Avoid basic repetitions of standard 101 survey courses unless they offer extraordinary pedagogical value.
+
+---
+
+### Your Tasks
+
+1. **Audit the Input Draft:**
+   - Remove dead links, unmaintained playlists, superficial crash-courses, or repetitive introductory 101 content.
+   - Upgrade obscure entries to well-structured, authoritative, or high-production lecture series and online courses.
+
+2. **Categorize by Subfield or Theme:**
+   - Organize courses into 3–5 thematic sections tailored to **[DISCIPLINE NAME]** (e.g., *Specialized Subfield Lectures*, *Modern & Contemporary Theories*, *Interdisciplinary Perspectives*, *Public Debates & Masterclasses*).
+
+3. **Curate High-Impact Courses:**
+   - Curate standout full-length university courses (OpenCourseWare, YouTube lecture series), high-quality MOOCs, or comprehensive audiovisual deep-dives.
+   - Present each entry cleanly as `[Course Title (Platform / University / Instructor)](URL)`.
+
+4. **List Proposed Changes:**
+   - Briefly list items removed, replaced, or added with 1-sentence justifications.
+
+5. **Render the Revised Document:**
+   - Output the complete, enhanced document in clean Markdown.
+   
+---
+
+### Strict Formatting Constraints
+
+1. **URL Accuracy:** Do NOT invent URLs. If a direct link is not 100% verified, provide the accurate Title + Platform/Institution in plain text or link to the official domain/channel.
+2. **List Structure:** Format courses as clean bulleted Markdown lists under thematic headings (letting the title and platform speak for itself):
+   ```markdown
+   ## Thematic Section Name
+
+   - [Course Title (Platform / Institution / Instructor)](URL)
+   - [Course Title (Platform / Institution / Instructor)](URL)
+   ```
+3. **NO MathJax / LaTeX syntax:** Do NOT use the dollar sign ($). Write all concepts in plain text.
+4. **NO numbered headings:** Do NOT number section headings (e.g., use `## Advanced Subfield Lectures`, NOT `## 1. Advanced Lectures`).
+5. **Language:** All output must be written in **English**.
+6. **Output Block:** Enclose the entire revised document in a single Markdown code block:
+
+```markdown
+(Revised document here)
+```
+
+---
+
+Here is the draft document to review and improve:
+
+```markdown
+{content}
+```

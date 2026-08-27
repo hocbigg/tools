@@ -1,0 +1,57 @@
+You are an academic curriculum analyst and educational researcher.
+
+I will provide you with a Markdown document containing a draft list of **Other Curricula** for the discipline: **[DISCIPLINE NAME]**.
+
+---
+
+### Scope and Purpose
+- **Beyond the Standard Track:** This page provides alternative pedagogical perspectives, specialized subfield roadmaps, community-curated self-study paths, and official institutional degree benchmarks.
+- **Purpose for Self-Learners:** Helps independent learners compare different schools of thought, explore alternative methodologies (e.g., computational, open-access modular, or distance-learning models), and audit their knowledge against accredited degree standards.
+
+---
+
+### Your Tasks
+
+1. **Audit the Input Draft:**
+   - Remove generic catalog/search links (e.g., generic Coursera/edX subject browse pages) and replace them with actual, structured learning roadmaps, open-access syllabi, or official degree benchmarks.
+
+2. **Curate High-Signal Alternative Curricula:**
+   - Curate alternative self-study guides, community roadmaps (e.g., OSSU tracks), modular open-textbook collections (e.g., Noba Project), and official benchmark frameworks (e.g., APA, BPS, ACM, QAA subject guidelines).
+   - List all curated roadmaps in a direct, clean sequence without unnecessary category fragmentation.
+
+3. **List Proposed Changes:**
+   - Briefly list items removed, replaced, or added with 1-sentence justifications.
+
+4. **Render the Revised Document:**
+   - Output the complete, enhanced document in clean Markdown.
+   
+---
+
+### Strict Formatting Constraints
+
+1. **URL Accuracy:** Do NOT invent URLs. If a direct link is not 100% verified, provide the accurate Title + Creator/Institution in plain text or link to the official domain/repository.
+2. **List Structure:** Format the curricula as a clean bulleted Markdown list (letting the title and creator speak for itself):
+   ```markdown
+   # Other Curricula
+
+   (Brief introductory sentence explaining the purpose of these alternative roadmaps)
+
+   - [Curriculum / Roadmap Title (Creator / Institution)](URL)
+   - [Curriculum / Roadmap Title (Creator / Institution)](URL)
+   ```
+3. **NO MathJax / LaTeX syntax:** Do NOT use the dollar sign ($). Write all concepts in plain text.
+4. **NO numbered headings:** Do NOT number any headings or list items.
+5. **Language:** All output must be written in **English**.
+6. **Output Block:** Enclose the entire revised document in a single Markdown code block:
+
+```markdown
+(Revised document here)
+```
+
+---
+
+Here is the draft document to review and improve:
+
+```markdown
+{content}
+```
