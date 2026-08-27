@@ -1,0 +1,27 @@
+Give me a clean, up-to-date list of the best online communities for studying and practicing [Field] (Ensure links are current and functional).
+
+Format exactly like this (only include categories that actually have active communities):
+
+## Online Communities for [Field]
+
+- Forums:
+  - [Name 1](valid direct link)
+  - [Name 2](valid direct link)
+  - ...
+
+- Subreddits:
+  - [r/subreddit1](https://www.reddit.com/r/subreddit1/)
+  - [r/subreddit2](https://www.reddit.com/r/subreddit2/)
+  - ...
+
+- Discord servers:
+  (only permanent invite links, no expired ones):
+  - [Server Name 1](https://discord.gg/xxxxx)
+  - [Server Name 2](https://discord.gg/xxxxx)
+  - ...
+
+- Other / Slack / Mastodon / etc (if relevant):
+  - [Name](link)
+  - ...
+
+Use only currently active, high-quality communities. Skip any category that doesn’t have good options.
