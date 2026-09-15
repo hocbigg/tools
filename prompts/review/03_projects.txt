@@ -4,12 +4,18 @@ I will provide you with a Markdown document containing a draft list of **Project
 
 ---
 
-(Mình cảm thấy một số phần mô tả bị "mang tính lập trình" quá, ví dụ như "concrete, real-world buildable artifacts, existing online tutorials, open-source repositories, open datasets, and replication protocols" hay là "work through real tools, code, or data pipelines" hoặc "Eliminate superficial \"how-to\" listicles and replace them with actual project repositories, tools, or open-science protocols". Hãy sửa lại phần đó. Phần lớn các chương trình mà mình tạo thiên về Khoa học xã hội và Humanities hơn, gần như không có Toán, Khoa học tự nhiên như Vật lý, hóa học .etc., cũng như lập trình này kia)
+### Context
+
+- **Target Audience:** Self-directed learners (self-taught individuals, polymaths, and career-changers) who have studied the core and/or advanced topics in [DISCIPLINE NAME] and want to apply their knowledge through concrete, tangible projects.
+- This is not a classroom assignment list — projects should be things a learner can pursue independently, without an instructor, cohort, or institutional access.
+- **Handling Incomplete or Empty Drafts:** If the input draft is empty, sparse, or contains only generic/theoretical entries without actionable guides, you must research and populate high-quality project guides from scratch across relevant thematic domains.
+
+---
 
 ### Curation Philosophy: Top-Down & Project-Based Discovery
 
 - **"Build-Your-Own-X" Model for Humanities & Social Sciences:** Avoid artificial linear tiers (e.g., "Beginner project 1, Intermediate project 2"). Instead, provide a curated directory of **concrete, actionable project walkthroughs, step-by-step methodological guides, open templates, and real-world analytical workflows**.
-- **Actionable Discovery:** Learners choose a tangible project they want to produce (e.g., a critical rhetorical analysis, a qualitative interview study, an archival curation project, or a policy brief) and discover underlying theoretical frameworks as they construct the artifact.
+- **Actionable Discovery:** Learners choose a tangible project they want to produce (e.g., a rhetorical/textual analysis, an interview study, an archival curation project, a policy brief, a program evaluation, or a professional deliverable such as a project charter or grant proposal) and discover underlying theoretical frameworks as they construct the artifact.
 
 ---
 
@@ -19,12 +25,17 @@ I will provide you with a Markdown document containing a draft list of **Project
    - Remove vague, purely theoretical assignments that lack actionable guidance.
    - Retain and curate high-quality, step-by-step guides, published methodological walkthroughs, or public open-source project templates.
 
-2. **Categorize by Disciplinary Methods / Artifacts:**
-   - Organize projects into thematic domains relevant to the discipline (e.g., *Textual & Rhetorical Criticism*, *Qualitative Fieldwork & Survey Design*, *Archival & Primary Source Analysis*, *Case Study & Policy Analysis*, *Empirical Replication*).
+2. **Categorize by Tangible Outcome:**
+   - First, check whether the input draft already has category/thematic headings. If they exist and are already phrased around a concrete artifact or deliverable (e.g., "Write a Policy Brief"), preserve and refine them rather than replacing them with new ones.
+   - Where the draft's existing categories are missing, too generic, or named after academic methods rather than outcomes, rename or restructure them to reflect the concrete artifact or deliverable a learner would produce, phrased in plain, actionable language — e.g., *Write a Rhetorical/Textual Analysis*, *Conduct an Interview Study*, *Curate a Primary-Source Archive*, *Write a Policy Brief*, *Run a Program Evaluation*, *Produce a Professional Deliverable (e.g., grant proposal, project charter)*.
+   - Name categories after what the learner builds or produces, not the academic method behind it. Avoid method-driven names like "Empirical Replication" or "Qualitative Fieldwork & Survey Design" — prefer direct, actionable phrasing like "Conduct a Small Research Study" or "Run a Field Interview Project."
+   - The number of guides per category is not fixed — include as many high-quality guides as genuinely exist, and as few as necessary if strong options are limited.
 
 3. **Curate High-Signal Project Guides (GitHub `build-your-own-x` Style):**
    - For each entry, provide a clean Markdown link to an existing tutorial, step-by-step methodology guide, or public project walkthrough: `[Project / Guide Name](URL)`.
    - Keep entries clean and direct—let the project title and guide speak for itself so learners can independently explore.
+   - **Accessibility:** Prioritize free, publicly accessible guides and templates (blog walkthroughs, university-published assignments, open GitHub-style repositories, nonprofit/professional-body resources). Paid resources should only be included if they are exceptionally high-signal and have no adequate free alternative — flag any paid entry explicitly.
+   - **Source quality:** Avoid SEO-optimized "project idea" listicles, affiliate-driven blogs, or clickbait roundups with no real depth. Prioritize actual step-by-step walkthroughs from subject-matter experts, official documentation/templates, and real practitioner write-ups (e.g., well-regarded personal blogs, specialized forums, GitHub-style repositories) that show real methodology, not just a list of ideas.
 
 4. **List Proposed Changes:**
    - Briefly list which project guides were added, removed, or reorganized and why.
@@ -36,24 +47,27 @@ I will provide you with a Markdown document containing a draft list of **Project
 
 ### Strict Formatting Constraints
 
-1. **URL Accuracy:** Do NOT invent URLs. If a direct link is not 100% verified, provide the accurate Title + Author/Platform in plain text or link to the official domain/repository.
+1. **URL Accuracy:** Do NOT invent or hallucinate URLs.
+   - If you know the specific guide/article/template but are not 100% certain of its exact URL, do NOT link to the platform's homepage as a substitute — a homepage link paired with a specific title is misleading, since it won't take the learner to the actual guide. In this case, either (a) provide the precise URL only if you are genuinely confident it is correct, or (b) present the title in plain text (no link) with a note like "search '[Title]' on [Platform]" so the learner can find it directly.
+   - Only link to a platform's homepage or landing page when the entry is genuinely about the platform/hub as a whole (e.g., recommending an entire resource hub to browse), not when it's presented as a specific guide.
 2. **List Structure (`build-your-own-x` Style):** Format projects as clean bulleted Markdown lists under thematic headings:
-   ```markdown
+```markdown
    ## Thematic Domain Name
 
    - [Project / Guide Name](URL)
    - [Project / Guide Name](URL)
-   ```
-3. **NO MathJax / LaTeX syntax:** Do NOT use the dollar sign ($). Write math/statistical concepts in plain text.
-4. **NO numbered headings:** Do NOT number section headings (e.g., use `## Rhetorical Criticism & Textual Analysis`, NOT `## 1. Rhetorical Criticism`).
-5. **Language:** All output must be written in **English**.
-6. **Output Block:** Enclose the entire revised document in a single Markdown code block:
+```
+3. **NO numbered headings:** Do NOT number section headings (e.g., use `## Rhetorical Criticism & Textual Analysis`, NOT `## 1. Rhetorical Criticism`).
+4. **Language:** All output must be written in **English**, using clear, natural phrasing at roughly a B2–C1 (upper-intermediate to advanced) reading level. Prefer plain, direct sentence structures over dense academic phrasing — but do not avoid or water down necessary field-specific terminology (e.g., "epistemology," "confounding variable," "case law") when it's the correct term for the concept; the goal is accessible sentence construction, not simplified vocabulary.
+5. **Output Block:** Enclose the entire revised document in a single Markdown code block:
 
 ```markdown
 (Revised document here)
 ```
 
 ---
+
+*Note: If any critical information is missing (e.g., learner's assumed prior knowledge, expected number of thematic domains), ask clarification questions **before** proceeding.*
 
 Here is the draft document to review and improve:
 

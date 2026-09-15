@@ -4,25 +4,35 @@ I will provide you with a Markdown document containing a draft list of **Great R
 
 ---
 
+### Context
+
+- **Target Audience:** Self-directed learners (self-taught individuals, polymaths, career-changers) seeking substantive readings to deepen their understanding of [DISCIPLINE NAME] beyond textbook basics — not a research bibliography for academic credentialing.
+- **Handling Incomplete or Empty Drafts:** If the input draft is empty, sparse, or redundant, you must research and populate a robust reading list from scratch across relevant thematic domains.
+
+---
+
 ### Curation Philosophy
 
-- **High Substance & Transformative Ideas:** Focus on field-defining books, seminal essays, landmark empirical papers, and thought-provoking clinical or philosophical monographs.
-- **Distinct from Core Textbooks:** Do **not** list standard undergraduate introductory survey textbooks (which belong in the core curriculum). Focus on works that show how master thinkers discover insights, formulate paradigms, or challenge dogma.
+- **High Substance, Accessible Ideas:** Focus on influential, high-substance books and essays that shape how people think about the discipline — works that changed the conversation, challenged conventional views, or remain widely read and cited outside the classroom. Prioritize readability and lasting relevance for an independent adult reader over academic prestige.
+- **Distinct from Core Textbooks:** Do **not** list standard undergraduate introductory survey textbooks (which belong in the core curriculum). Focus on works that show how influential thinkers or practitioners arrived at their insights, shaped the field, or challenged prevailing views.
 
 ---
 
 ### Your Tasks
 
 1. **Audit & Filter the Input Draft:**
-   - Remove generic undergraduate introductory textbooks, shallow self-help/trade books, and redundant entries.
-   - Categorize remaining and curated readings into 3–6 thematic domains tailored to **[DISCIPLINE NAME]** (e.g., *Foundational Primary Texts*, *Seminal Empirical/Theoretical Papers*, *Critical & Contemporary Monographs*, *Methodological & Philosophical Classics*).
+   - Remove generic undergraduate introductory textbooks, shallow self-help/trade books, SEO-driven "must-read" listicles with no real curation logic, and redundant entries.
+   - Check whether the input draft already has category/thematic headings organized by subject matter (e.g., "Ethics," "Epistemology"). If so, preserve and refine them rather than replacing them.
+   - Where categories are missing or need to be created, organize readings by **subfield/topic within the discipline** (mirroring how the core curriculum or advanced topics are structured — e.g., for Philosophy: *Ethics*, *Metaphysics*, *Epistemology*; for History: *Ancient*, *Medieval*, *Modern*), not by generic type labels like "Primary Texts" or "Methodological Classics." A reading's format (book, essay, paper) stays in the `Type` column — it should not determine which category it belongs to.
+   - The number of readings per category is not fixed — include as many high-quality readings as genuinely exist, and as few as necessary if strong options are limited.
 
-2. **Curate Landmark Books & Seminal Papers:**
-   - Curate transformative books, influential monographs, and field-defining papers/essays that represent milestone intellectual breakthroughs in the discipline.
-   - Where possible, prioritize classic papers accessible via open academic archives (e.g., JSTOR Open, PhilPapers, Internet Archive, institutional repositories).
+2. **Curate Influential Books & Papers:**
+   - Curate influential books, essays, and field-shaping papers/reports that represent milestone contributions to the discipline.
+   - Where possible, prioritize papers/essays accessible via open academic archives (e.g., JSTOR Open, PhilPapers, Internet Archive, institutional repositories).
+   - **Accessibility:** Books are the one category where paid resources are acceptable (since substantive books often aren't fully free). However, for essays, papers, and shorter works, strongly prioritize those with legitimate free/open access (open-access journals, author's personal site, institutional repository, Internet Archive) — avoid recommending paywalled journal articles unless truly indispensable and no accessible alternative exists.
 
 3. **Format Metadata:**
-   - For every entry, specify: Title, Author(s), Type (*Book / Essay / Landmark Paper / Monograph*), and a 1–2 sentence note explaining *why it is worth reading*.
+   - For every entry, specify: Title, Author(s).
 
 4. **List Proposed Changes:**
    - Briefly summarize which titles were removed, replaced, or added, along with concise intellectual justifications.
@@ -34,21 +44,26 @@ I will provide you with a Markdown document containing a draft list of **Great R
 
 ### Strict Formatting Constraints
 
-1. **URL Accuracy:** Do NOT invent URLs. If a direct link is not 100% verified, provide the accurate Title + Author/Platform in plain text or link to the official domain/repository.
+1. **URL Accuracy:** Do NOT invent or hallucinate URLs.
+   - If you know the specific title but are not 100% certain of its exact URL, do NOT link to a publisher's or platform's homepage as a substitute — a homepage link paired with a specific title is misleading. Follow the priority hierarchy below instead.
+   - For each unlinked title, find a valid, functional link following this strict priority hierarchy:
+     1. **Legitimate free open-access version:** author's open-access PDF, Open Textbook Library, Project Gutenberg, or institutional repository.
+     2. **Google Books** (using the format: `https://books.google.com/books?isbn=[ISBN]`, e.g. `https://books.google.com/books?isbn=9780801482809`).
+     3. **Fallback (unlinked):** If no link from the above can be verified with 100% certainty, do NOT invent a URL and do NOT use empty brackets `[]()`. Leave the title in plain text and mark it `unlinked`.
 2. **Table Format:** Use clean Markdown tables under each thematic category with the following column structure:
-   `| Title | Author(s) | Type | Why It's Worth Reading |`
+   `| Title | Author(s) |`
    - Format book/paper titles with italics (`*Title*`) or verified Markdown links (`[*Title*](URL)`).
-   - *Why It's Worth Reading:* Keep to 1–2 concise sentences focusing on the central thesis or intellectual impact.
-3. **NO MathJax / LaTeX syntax:** Do NOT use the dollar sign ($). Write math/statistical concepts in plain text.
-4. **NO numbered headings:** Do NOT number section headings (e.g., use `## Primary Texts & Seminal Essays`, NOT `## 1. Primary Texts`).
-5. **Language:** All output must be written in **English**.
-6. **Output Block:** Enclose the entire revised document in a single Markdown code block:
+3. **NO numbered headings:** Do NOT number section headings (e.g., use `## Primary Texts & Influential Essays`, NOT `## 1. Primary Texts`).
+4. **Language:** All output must be written in **English**, using clear, natural phrasing at roughly a B2–C1 (upper-intermediate to advanced) reading level. Prefer plain, direct sentence structures over dense academic phrasing — but do not avoid or water down necessary field-specific terminology (e.g., "epistemology," "confounding variable," "case law") when it's the correct term for the concept; the goal is accessible sentence construction, not simplified vocabulary.
+5. **Output Block:** Enclose the entire revised document in a single Markdown code block:
 
 ```markdown
 (Revised document here)
 ```
 
 ---
+
+*Note: If any critical information is missing (e.g., expected number of thematic domains or readings per domain), ask clarification questions **before** proceeding.*
 
 Here is the draft document to review and improve:
 

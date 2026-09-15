@@ -4,25 +4,38 @@ I will provide you with a Markdown document containing a draft list of **Great C
 
 ---
 
+### Context
+
+- **Target Audience:** Self-directed learners (self-taught individuals, polymaths, career-changers) looking for high-quality video/audio courses to deepen their understanding of [DISCIPLINE NAME] outside a classroom setting.
+- **Handling Incomplete or Empty Drafts:** If the input draft is empty, sparse, or redundant, you must research and populate a robust list of courses from scratch across relevant thematic sections.
+
+---
+
 ### Curation Philosophy (Format-Agnostic & High Signal)
 
 - **Beyond Standard Text:** Curate resources that build deep intuition and strong mental models.
 - **Distinct from Core Intro Courses:** Avoid basic repetitions of standard 101 survey courses unless they offer extraordinary pedagogical value.
+- This page is strictly for video/audio-based courses and lecture series — do not include books, essays, or papers (which belong in the Readings page).
+- **Learning resource vs. reference resource:** A qualifying entry must be a structured video/audio *course* or *lecture series* with pedagogical sequencing — not an interactive database, digital archive, or reference portal (even if it contains videos). If such a resource is valuable, it doesn't belong on this page.
 
 ---
 
 ### Your Tasks
 
 1. **Audit the Input Draft:**
-   - Remove dead links, unmaintained playlists, superficial crash-courses, or repetitive introductory 101 content.
-   - Upgrade obscure entries to well-structured, authoritative, or high-production lecture series and online courses.
+   - Remove dead links, unmaintained playlists, superficial crash-courses, repetitive introductory 101 content, or entries sourced from SEO/affiliate "best courses" roundup articles rather than the official course page.
+   - Upgrade obscure entries to well-structured, authoritative, and freely accessible lecture series and online courses — production quality is a bonus, not a requirement.
 
 2. **Categorize by Subfield or Theme:**
-   - Organize courses into 3–5 thematic sections tailored to **[DISCIPLINE NAME]** (e.g., *Specialized Subfield Lectures*, *Modern & Contemporary Theories*, *Interdisciplinary Perspectives*, *Public Debates & Masterclasses*).
+   - Check whether the input draft already has category headings organized by subject matter. If so, preserve and refine them.
+   - Where categories are missing or need to be created, organize courses by **subfield/topic within the discipline** (mirroring the core curriculum or advanced topics structure), not by generic labels like "Modern & Contemporary Theories" or "Public Debates & Masterclasses."
+   - The number of courses per section is not fixed — include as many high-quality courses as genuinely exist, and as few as necessary if strong options are limited.
 
 3. **Curate High-Impact Courses:**
    - Curate standout full-length university courses (OpenCourseWare, YouTube lecture series), high-quality MOOCs, or comprehensive audiovisual deep-dives.
+   - For applied/professional disciplines (e.g., Project Management, Public Administration, Library Studies, Nonprofit Management), also consider free training from professional bodies, government agencies, or reputable nonprofit organizations, in addition to university-style courses.
    - Present each entry cleanly as `[Course Title (Platform / University / Instructor)](URL)`.
+   - **Accessibility:** Courses must be freely accessible — prioritize university OpenCourseWare (MIT OCW, Yale Open Courses, etc.), free YouTube lecture series from credible institutions/instructors, and MOOCs that are free to audit (Coursera/edX in audit mode). Do NOT recommend courses that are paywalled, subscription-only (e.g., Masterclass, Skillshare), or require payment to access core lecture content — even if high-production. A certificate being paid is fine as long as the course content itself is free to watch/access.
 
 4. **List Proposed Changes:**
    - Briefly list items removed, replaced, or added with 1-sentence justifications.
@@ -34,24 +47,27 @@ I will provide you with a Markdown document containing a draft list of **Great C
 
 ### Strict Formatting Constraints
 
-1. **URL Accuracy:** Do NOT invent URLs. If a direct link is not 100% verified, provide the accurate Title + Platform/Institution in plain text or link to the official domain/channel.
+1. **URL Accuracy:** Do NOT invent URLs.
+   - If you know the specific course but are not 100% certain of its exact URL, do NOT link to the platform's homepage as a substitute — a homepage link paired with a specific course title is misleading. In this case, either (a) provide the precise URL only if you are genuinely confident it is correct, or (b) present the title in plain text (no link) with a note like "search '[Title]' on [Platform]" so the learner can find it directly.
+   - Only link to a platform's homepage when the entry is genuinely about the platform/channel as a whole, not a specific course.
 2. **List Structure:** Format courses as clean bulleted Markdown lists under thematic headings (letting the title and platform speak for itself):
-   ```markdown
+```markdown
    ## Thematic Section Name
 
    - [Course Title (Platform / Institution / Instructor)](URL)
    - [Course Title (Platform / Institution / Instructor)](URL)
-   ```
-3. **NO MathJax / LaTeX syntax:** Do NOT use the dollar sign ($). Write all concepts in plain text.
-4. **NO numbered headings:** Do NOT number section headings (e.g., use `## Advanced Subfield Lectures`, NOT `## 1. Advanced Lectures`).
-5. **Language:** All output must be written in **English**.
-6. **Output Block:** Enclose the entire revised document in a single Markdown code block:
+```
+3. **NO numbered headings:** Do NOT number section headings (e.g., use `## Advanced Subfield Lectures`, NOT `## 1. Advanced Lectures`).
+4. **Language:** All output must be written in **English**, using clear, natural phrasing at roughly a B2–C1 (upper-intermediate to advanced) reading level. Prefer plain, direct sentence structures over dense academic phrasing — but do not avoid or water down necessary field-specific terminology (e.g., "epistemology," "confounding variable," "case law") when it's the correct term for the concept; the goal is accessible sentence construction, not simplified vocabulary.
+5. **Output Block:** Enclose the entire revised document in a single Markdown code block:
 
 ```markdown
 (Revised document here)
 ```
 
 ---
+
+*Note: If any critical information is missing (e.g., expected number of thematic sections or courses per section), ask clarification questions **before** proceeding.*
 
 Here is the draft document to review and improve:
 

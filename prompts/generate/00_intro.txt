@@ -1,0 +1,46 @@
+You are a curriculum editor writing the opening/introductory section for a self-study curriculum that has already been created earlier in this conversation.
+
+---
+
+### Context
+
+- The core curriculum for **[DISCIPLINE NAME]** already exists above in this conversation (a list of subjects, each with a short description and resources). Read and use that actual content — do not ask the person to paste it again, and do not invent subjects or resources that aren't there.
+- This curriculum is for self-directed learners (self-taught individuals) studying independently, not in a classroom.
+- Your job is to write only the **introductory section** that will be placed at the top of the curriculum, before the first subject heading. Do not rewrite, reorganize, or edit the existing subject list.
+
+---
+
+### Your Task
+
+Write an introduction that helps a learner approach this specific curriculum well. There is no fixed template or required set of subsections — treat the following only as a menu of ideas to draw from, not a checklist to complete:
+
+- What this discipline is and why someone might want to study it
+- Who this curriculum is (and isn't) for — e.g., assumed background, or explicitly none
+- How the curriculum is organized and how to move through it (e.g., which subjects build on others vs. can be studied in any order)
+- What this curriculum covers and doesn't cover — it's the core/foundational subjects everyone in the discipline should study, not the full picture. Mention that once these are covered, a learner can move on to the other pages in this series: [Advanced Topics](advanced_topics.md) for specialized subfields, [Projects](projects.md) for hands-on practice, [Readings](extra/readings.md) for deeper literature, and [Courses](extra/courses.md) for extended video/audio material. Only reference the ones that are genuinely relevant to mention — you don't need to force all four into one sentence if it reads awkwardly.
+
+Only include what is genuinely useful for *this* discipline and *this* curriculum — do not pad the intro with generic filler, boilerplate encouragement, or sections that don't add real value just to seem complete. It is completely fine for the intro to be short (a couple of paragraphs) if that's all the discipline warrants, or longer if there's genuinely more useful context to give. Let the actual content and structure of the curriculum guide what's worth mentioning — for example, if the curriculum has a clear linear sequence (like a language curriculum), it's worth explaining that; if subjects are mostly independent, say so instead of inventing a sequence that isn't there.
+
+Avoid repeating information that's already obvious from the subject list itself (e.g., don't just re-list all the subject names).
+
+---
+
+### Formatting Constraints
+
+1. **No numbered headings or numbered lists** for any subsections you choose to include.
+2. **Language:** Write in clear, natural English at roughly a B2–C1 reading level. Prefer plain, direct sentences over dense or promotional phrasing — avoid a "welcome to this course!" marketing tone.
+3. **Do not invent facts** about the curriculum's structure, subjects, or resources — base everything on what's actually in the curriculum above.
+4. **Cross-references to other pages:** When mentioning Advanced Topics, Projects, Readings, or Courses, always format them as Markdown links using these exact paths, not plain bold text:
+   - Advanced Topics → `[Advanced Topics](advanced_topics.md)`
+   - Projects → `[Projects](projects.md)`
+   - Readings → `[Readings](extras/readings.md)`
+   - Courses → `[Courses](extras/courses.md)`
+   Do not alter these paths or invent different ones.
+5. **Output Block:** Output only the introductory section (not the full curriculum) in a single Markdown code block:
+	```markdown
+	(Introduction here)
+	```
+
+---
+
+*Note: If the core curriculum isn't visible earlier in this conversation, or if it's unclear which curriculum/discipline to write the intro for, ask before proceeding rather than guessing.*

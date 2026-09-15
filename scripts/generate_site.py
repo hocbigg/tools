@@ -17,11 +17,10 @@ from pathlib import Path
 import markdown
 import yaml
 
-# ==============================================================================
-# INLINED STYLESHEET (Light/Dark mode, A11y, Focus visible, Responsive)
-# ==============================================================================
 INLINED_CSS = """
 :root {
+  color-scheme: light dark;
+
   --bg: #ffffff;
   --fg: #1a1a1a;
   --muted: #595959;
@@ -49,18 +48,18 @@ INLINED_CSS = """
   box-sizing: border-box;
 }
 
-/* 1. Mở rộng độ rộng trang & font chữ thoáng hơn */
 body {
   margin: 1.5rem auto;
-  max-width: min(44rem, 92vw); /* Mở rộng chiều ngang linh hoạt theo màn hình */
-  padding: 0 0.75rem 3.5rem;
+  max-width: 60rem;
+  padding: 0 1rem 3.5rem;
   background-color: var(--bg);
   color: var(--fg);
   font: 1.15rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  word-wrap: break-word;
+  
+  /* Cú pháp hiện đại thay thế cho word-wrap */
+  overflow-wrap: break-word;
 }
 
-/* 2. Thiết kế lại Navbar: sạch sẽ, có đường phân cách và phân biệt Brand/Link */
 .site-header {
   margin-bottom: 2.5rem;
   border-bottom: 1px solid var(--border);
@@ -91,17 +90,15 @@ nav a:focus-visible {
   text-underline-offset: 4px;
 }
 
-/* Làm nổi bật Logo / Tên thương hiệu ở đầu Navbar */
 nav .nav-brand {
   color: var(--fg);
   font-weight: 700;
   margin-right: 0.5rem;
 }
 
-/* Accessibility: Skip Link */
 .skip-link {
   position: absolute;
-  top: -9999px;
+  transform: translateY(-150%);
   left: 1rem;
   background: var(--fg);
   color: var(--bg);
@@ -110,12 +107,13 @@ nav .nav-brand {
   text-decoration: none;
   font-weight: 600;
   border-radius: 4px;
-}
-.skip-link:focus {
-  top: 1rem;
+  transition: transform 0.2s ease;
 }
 
-/* Accessibility: Screen Reader Only */
+.skip-link:focus {
+  transform: translateY(1rem);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -123,41 +121,65 @@ nav .nav-brand {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
 
-/* Keyboard focus indicators */
 :focus-visible {
   outline: 2px solid var(--focus-ring);
   outline-offset: 3px;
 }
 
-/* Typography & Headings */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.3;
-  margin-top: 1.75em;
-  margin-bottom: 0.5em;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   color: var(--fg);
+  font-weight: 600;
 }
-h1 { font-size: 1.85rem; margin-top: 0.5em; }
-h2 { font-size: 1.45rem; }
-h3 { font-size: 1.2rem; }
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
 
 p, ul, ol, blockquote, table {
   margin-top: 0;
   margin-bottom: 1.25rem;
 }
 
-/* Khử margin thừa cho danh sách con lồng bên trong (nested list) */
 li > ul,
 li > ol {
   margin-top: 0.25rem;
   margin-bottom: 0;
 }
 
-/* Khoảng cách gọn gàng giữa các dòng li */
 li {
   margin-bottom: 0.25rem;
 }
@@ -172,18 +194,25 @@ a:hover {
   text-decoration-thickness: 2px;
 }
 
+a:has(img) {
+  text-decoration: none;
+}
+
 .page-header {
   text-align: center;
   margin-bottom: 2rem;
 }
-.page-header img {
+
+img {
   max-width: 100%;
   height: auto;
+}
+
+.page-header img {
   margin: 0 auto 1rem;
   display: block;
 }
 
-/* Code & Pre (Zero-JS minimal style) */
 code {
   font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
   font-size: 0.875em;
@@ -192,6 +221,7 @@ code {
   border-radius: 4px;
   border: 1px solid var(--border);
 }
+
 pre {
   background-color: var(--code-bg);
   border: 1px solid var(--border);
@@ -200,49 +230,53 @@ pre {
   overflow-x: auto;
   tab-size: 2;
 }
+
 pre code {
   background: transparent;
   padding: 0;
   border: none;
   font-size: 0.9rem;
+  border-radius: 0;
 }
 
-/* Tables */
 .table-wrapper {
   overflow-x: auto;
   margin-bottom: 1.5rem;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
 }
+
 th, td {
   border: 1px solid var(--border);
   padding: 0.6rem 0.75rem;
   vertical-align: top;
 }
+
 th {
   background-color: var(--th-bg);
   font-weight: 600;
 }
 
-/* Blockquote */
 blockquote {
+  margin-inline: 0;
   border-left: 4px solid var(--border);
   padding-left: 1rem;
   color: var(--muted);
   font-style: italic;
 }
 
-/* Media & Print */
 @media (prefers-reduced-motion: reduce) {
   * {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
+    animation: none !important;
+    transition: none !important;
     scroll-behavior: auto !important;
   }
 }
+
 @media print {
   body {
     max-width: none;
@@ -255,9 +289,6 @@ blockquote {
 }
 """
 
-# ==============================================================================
-# HTML BASE TEMPLATE
-# ==============================================================================
 HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="{{language}}">
 <head>
@@ -302,9 +333,29 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 """
 
 PAGE_HEADER_TEMPLATE = """<header class="page-header">
-  <img src="{base_prefix}images/logo.png" alt="Hocbigg logo" width="120" height="120">
+  <img src="/images/logo.png" alt="Hocbigg logo">
   <h1>{title}</h1>
+  <p class="last-updated"><small>Last updated on: <time datetime="{date_iso}">{date_iso}</time></small></p>
 </header>"""
+
+
+CUSTOM_LABELS = {
+    "advanced_topics.md": "Advanced Topics",
+    "projects.md": "Projects",
+    "extras/readings.md": "Extra Readings",
+    "extras/courses.md": "Extra Courses",
+    "resources.md": "Resources",
+    "extras/other_curricula.md": "Other Curricula",
+}
+
+NAV_ORDER = [
+    "Advanced Topics",
+    "Projects",
+    "Extra Readings",
+    "Extra Courses",
+    "Resources",
+    "Other Curricula",
+]
 
 # ==============================================================================
 # HELPER FUNCTIONS
@@ -356,21 +407,61 @@ def wrap_tables(html_text: str) -> str:
         html_text
     )
 
+def get_tab_label(rel_path: Path) -> str:
+    """Xác định nhãn của Tab dựa trên CUSTOM_LABELS hoặc fallback tự động."""
+    posix_path = rel_path.as_posix()
+    if posix_path in CUSTOM_LABELS:
+        return CUSTOM_LABELS[posix_path]
 
-def build_nav(is_root: bool, page_name: str = "") -> str:
-    """Construct semantic accessible navigation with global & project links."""
+    # Fallback tự động cho các file mới thêm vào sau này (ví dụ: extras/notes.md -> Extra Notes)
+    parts = []
+    for parent in rel_path.parent.parts:
+        parts.append(parent.rstrip('s').replace('_', ' ').replace('-', ' ').title())
+    parts.append(rel_path.stem.replace('_', ' ').replace('-', ' ').title())
+    return " ".join(parts)
+
+
+def build_nav(is_root: bool, page_name: str, root_dir: Path, base_prefix: str) -> str:
+    """Tự động quét các file .md để tạo Navbar theo cấu trúc: [Hocbigg] | [Project] | [Tabs...] | [GitHub]"""
     items = [
         '      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>'
     ]
 
-    # Nếu đang ở trong Project Page, thêm link quay về trang đầu của Project đó
+    # 1. Tên Project (Trỏ về trang chủ của Project đó)
     if not is_root and page_name:
-        items.append(f'      <li><a href="/{page_name}/">{page_name}</a></li>')
+        project_title = page_name.replace("_", " ").replace("-", " ").title()
+        items.append(f'      <li><a href="{base_prefix}">{project_title}</a></li>')
 
-    items.extend([
-        '      <li><a href="https://hocbigg.github.io/CONTRIBUTING.html">Contributing</a></li>',
-        '      <li><a href="https://github.com/hocbigg/" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>'
-    ])
+    # 2. Tự động thu thập các file .md làm Tab (Bỏ qua README.md và thư mục out/assets)
+    tabs = []
+    for md_path in root_dir.rglob("*.md"):
+        if md_path.name.lower() in ["readme.md", "index.md"]:
+            continue
+        if "out" in md_path.parts or "assets" in md_path.parts:
+            continue
+
+        rel_path = md_path.relative_to(root_dir)
+        label = get_tab_label(rel_path)
+        html_url = f"{base_prefix}{rel_path.with_suffix('.html').as_posix()}"
+        tabs.append((label, html_url))
+
+    # Sắp xếp các Tab theo đúng thứ tự ưu tiên trong NAV_ORDER
+    def sort_key(item):
+        label = item[0]
+        if label in NAV_ORDER:
+            return (0, NAV_ORDER.index(label))
+        return (1, label)
+
+    tabs.sort(key=sort_key)
+
+    for label, url in tabs:
+        items.append(f'      <li><a href="{url}">{label}</a></li>')
+
+    # 3. GitHub Link ở cuối
+    items.append(
+        f'      <li><a href="https://github.com/hocbigg/{page_name}" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>'
+    )
+
     return "    <ul>\n" + "\n".join(items) + "\n    </ul>"
 
 
@@ -431,7 +522,7 @@ def main():
         output_format="html5"
     )
 
-    nav_html = build_nav(is_root, page_arg)
+    nav_html = build_nav(is_root, page_arg, ROOT, BASE_PREFIX)
     generated_urls = []
 
     # 3. Process Markdown files
@@ -480,8 +571,14 @@ def main():
         author = meta.get("author", "hocbigg")
         language = meta.get("language", "en")
 
+        today_iso = date.today().isoformat()
+
         header_html = (
-            PAGE_HEADER_TEMPLATE.format(base_prefix=BASE_PREFIX, title=html.escape(title))
+            PAGE_HEADER_TEMPLATE.format(
+                base_prefix=BASE_PREFIX,
+                title=html.escape(title),
+                date_iso=today_iso
+            )
             if is_readme and rel_path.parent == Path(".")
             else ""
         )

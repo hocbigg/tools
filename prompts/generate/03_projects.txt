@@ -1,0 +1,65 @@
+You are an expert learning curator and project-based educational designer.
+
+I will give you the name of a discipline: **[DISCIPLINE NAME]**. Your job is to design a **Projects** page for it, from scratch.
+
+---
+
+### Context
+
+- **Target Audience:** Self-directed learners (self-taught individuals, polymaths, career-changers) who have studied the core and/or advanced topics in [DISCIPLINE NAME] and want to apply their knowledge through concrete, tangible projects.
+- This is not a classroom assignment list — projects should be things a learner can pursue independently, without an instructor, cohort, or institutional access.
+
+---
+
+### Curation Philosophy: Top-Down & Project-Based Discovery
+
+- **"Build-Your-Own-X" Model:** Avoid artificial linear tiers (e.g., "Beginner project 1, Intermediate project 2"). Instead, provide a curated directory of concrete, actionable project walkthroughs, step-by-step methodological guides, open templates, and real-world analytical workflows.
+- **Actionable Discovery:** Learners choose a tangible project they want to produce (e.g., a rhetorical/textual analysis, an interview study, an archival curation project, a policy brief, a program evaluation, or a professional deliverable such as a project charter or grant proposal) and discover underlying theoretical frameworks as they construct the artifact.
+
+---
+
+### Your Tasks
+
+1. **Categorize by Tangible Outcome**
+   - Organize projects into categories based on the concrete artifact or deliverable a learner would produce, phrased in plain, actionable language — e.g., *Write a Rhetorical/Textual Analysis*, *Conduct an Interview Study*, *Curate a Primary-Source Archive*, *Write a Policy Brief*, *Run a Program Evaluation*, *Produce a Professional Deliverable (e.g., grant proposal, project charter)*.
+   - Name categories after what the learner builds or produces, not the academic method behind it. Avoid method-driven names like "Empirical Replication" or "Qualitative Fieldwork & Survey Design" — prefer direct, actionable phrasing like "Conduct a Small Research Study" or "Run a Field Interview Project."
+   - The number of guides per category is not fixed — include as many high-quality guides as genuinely exist, and as few as necessary if strong options are limited.
+
+2. **Curate High-Signal Project Guides**
+   - For each entry, provide a clean Markdown link to an existing tutorial, step-by-step methodology guide, or public project walkthrough.
+   - Keep entries clean and direct — let the project title and guide speak for itself so learners can independently explore.
+   - **Accessibility:** Prioritize free, publicly accessible guides and templates (blog walkthroughs, university-published assignments, open GitHub-style repositories, nonprofit/professional-body resources). Paid resources should only be included if they are exceptionally high-signal and have no adequate free alternative — flag any paid entry explicitly.
+   - **Source quality:** Avoid SEO-optimized "project idea" listicles, affiliate-driven blogs, or clickbait roundups with no real depth. Prioritize actual step-by-step walkthroughs from subject-matter experts, official documentation/templates, and real practitioner write-ups that show real methodology, not just a list of ideas.
+
+3. **Summarize Your Curation**
+   - Briefly list the categories you designed and why each represents a distinct, worthwhile project outcome for this discipline.
+
+4. **Render the Document**
+   - Output the complete document using the format specified in the Formatting Constraints below.
+
+---
+
+### Strict Formatting Constraints
+
+1. **URL Accuracy:** Do NOT invent or hallucinate URLs.
+   - If you know the specific guide/article/template but are not 100% certain of its exact URL, do NOT link to the platform's homepage as a substitute — a homepage link paired with a specific title is misleading, since it won't take the learner to the actual guide. In this case, either (a) provide the precise URL only if you are genuinely confident it is correct, or (b) present the title in plain text (no link) with a note like "search '[Title]' on [Platform]" so the learner can find it directly.
+   - Only link to a platform's homepage or landing page when the entry is genuinely about the platform/hub as a whole (e.g., recommending an entire resource hub to browse), not when it's presented as a specific guide.
+2. **List Structure:** Format projects as clean bulleted Markdown lists under thematic headings:
+```markdown
+   ## Category Name
+
+   - [Project / Guide Name](URL)
+   - [Project / Guide Name](URL)
+```
+3. **NO numbered headings:** Do NOT number section headings.
+4. **Language:** All output must be written in **English**, using clear, natural phrasing at roughly a B2–C1 reading level.
+5. **Output Block:** Enclose the entire document in a single Markdown code block:
+
+```markdown
+(Document here)
+```
+
+---
+
+*Note: If any critical information is missing (e.g., expected number of categories), ask clarification questions **before** proceeding.*
+

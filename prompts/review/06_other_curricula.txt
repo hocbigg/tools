@@ -4,20 +4,34 @@ I will provide you with a Markdown document containing a draft list of **Other C
 
 ---
 
+### Context
+
+- **Target Audience:** Self-directed learners (self-taught individuals, polymaths, career-changers) who want to benchmark or diversify their self-study path in [DISCIPLINE NAME] by comparing it against other respected roadmaps and guides.
+- **Handling Incomplete or Empty Drafts:** If the input draft is empty, sparse, or contains only generic subject-browse links, you must research and populate high-quality alternative curricula and roadmaps from scratch.
+
+---
+
 ### Scope and Purpose
-- **Beyond the Standard Track:** This page provides alternative pedagogical perspectives, specialized subfield roadmaps, community-curated self-study paths, and official institutional degree benchmarks.
-- **Purpose for Self-Learners:** Helps independent learners compare different schools of thought, explore alternative methodologies (e.g., computational, open-access modular, or distance-learning models), and audit their knowledge against accredited degree standards.
+
+- **Beyond the Standard Track:** This page curates **independently authored self-study guides and roadmaps** — structured, opinionated learning paths created by individual educators, practitioners, bloggers, or communities (e.g., a "DIY degree" guide, a personal reading/study roadmap, a community-maintained curriculum). These are distinct from generic course-listing or aggregator pages: a qualifying entry should have its own pedagogical point of view, sequencing, and rationale — not just a bullet list of courses/links with no narrative or structure.
+- **Purpose for Self-Learners:** Helps independent learners compare different schools of thought, explore alternative methodologies, and see how other self-taught individuals or communities have structured their own learning path in this discipline.
+- This page is a reference/comparison tool, not a primary study path — learners are not expected to complete every listed roadmap, but to consult them for alternative structure, verification, or inspiration.
+- When researching new entries, look for phrases like "self-study guide to [discipline]", "how I taught myself [discipline]", "DIY degree in [discipline]", or "[discipline] reading/study roadmap" — these tend to surface independently authored guides rather than institutional or aggregator pages.
 
 ---
 
 ### Your Tasks
 
 1. **Audit the Input Draft:**
-   - Remove generic catalog/search links (e.g., generic Coursera/edX subject browse pages) and replace them with actual, structured learning roadmaps, open-access syllabi, or official degree benchmarks.
+   - Remove:
+     - Generic catalog/search/browse pages (e.g., Coursera/edX subject browse pages).
+     - Simple "roundup," "best of," or SEO-optimized/affiliate-driven listicles that aggregate courses/books without an original structure, sequencing, or pedagogical narrative (these belong on the Courses or Readings pages, not here).
+   - Replace with actual, structured self-authored study guides/roadmaps that reflect a coherent, end-to-end approach to learning the discipline.
 
 2. **Curate High-Signal Alternative Curricula:**
-   - Curate alternative self-study guides, community roadmaps (e.g., OSSU tracks), modular open-textbook collections (e.g., Noba Project), and official benchmark frameworks (e.g., APA, BPS, ACM, QAA subject guidelines).
+   - Curate independently authored self-study guides and roadmaps — for example, personal "DIY degree" guides (e.g., in the style of teachyourselfcs.com or Susan Rigetti's subject guides), self-study reading/study-plan essays published on blogs or newsletters (e.g., Substack-style guides), and community-maintained roadmaps (e.g., OSSU tracks).
    - List all curated roadmaps in a direct, clean sequence without unnecessary category fragmentation.
+   - **Accessibility:** The guide/roadmap itself should be free to read (no login or payment required). This applies to accessing the guide — not to the resources it recommends internally, which may include paid books consistent with the site's overall book policy.
 
 3. **List Proposed Changes:**
    - Briefly list items removed, replaced, or added with 1-sentence justifications.
@@ -31,24 +45,24 @@ I will provide you with a Markdown document containing a draft list of **Other C
 
 1. **URL Accuracy:** Do NOT invent URLs. If a direct link is not 100% verified, provide the accurate Title + Creator/Institution in plain text or link to the official domain/repository.
 2. **List Structure:** Format the curricula as a clean bulleted Markdown list (letting the title and creator speak for itself):
-   ```markdown
+```markdown
    # Other Curricula
 
    (Brief introductory sentence explaining the purpose of these alternative roadmaps)
 
    - [Curriculum / Roadmap Title (Creator / Institution)](URL)
    - [Curriculum / Roadmap Title (Creator / Institution)](URL)
-   ```
-3. **NO MathJax / LaTeX syntax:** Do NOT use the dollar sign ($). Write all concepts in plain text.
-4. **NO numbered headings:** Do NOT number any headings or list items.
-5. **Language:** All output must be written in **English**.
-6. **Output Block:** Enclose the entire revised document in a single Markdown code block:
+```
+3. **NO numbered headings:** Do NOT number any headings or list items.
+4. **Language:** All output must be written in **English**.
+5. **Output Block:** Enclose the entire revised document in a single Markdown code block:
 
 ```markdown
 (Revised document here)
 ```
-
 ---
+
+*Note: If any critical information is missing (e.g., expected number of curated entries), ask clarification questions **before** proceeding.*
 
 Here is the draft document to review and improve:
 

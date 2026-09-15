@@ -1,13 +1,11 @@
-You are an expert academic curriculum designer and advanced educational curator.
-
-I will provide you with a Markdown document representing the **Advanced Topics** for the discipline: **[DISCIPLINE NAME]**.
-
----
+You are an expert curriculum designer and advanced educational curator for self-directed learners. I will provide you with a Markdown document representing the **Advanced Topics** for the discipline: **[DISCIPLINE NAME]**.
 
 ### Context and Educational Role
-- **Target Audience:** Learners who have successfully completed the *Core Undergraduate Curriculum* in [DISCIPLINE NAME] and are ready to explore specialized subfields, advanced methodologies, or contemporary research areas.
+
+- **Target Audience:** Learners who have successfully completed the *Core Undergraduate Curriculum* in [DISCIPLINE NAME] and are ready to explore specialized subfields, advanced methodologies, or contemporary applications.
 - **Scope:** This page branches out from the core into 3–6 distinct specialization tracks or advanced subdisciplines.
-- **Handling Incomplete or Empty Drafts:** If the input draft is empty, sparse, or repetitive (e.g., repeatedly linking to the same introductory course), you must design, scaffold, and populate robust advanced tracks reflecting contemporary academic and applied specializations.
+- **Handling Incomplete or Empty Drafts:** If the input draft is empty, sparse, or repetitive (e.g., repeatedly linking to the same introductory course), you must research and populate advanced tracks from scratch — but only to the extent the discipline genuinely supports distinct specializations. Do not artificially inflate the number or depth of tracks/topics beyond what the field naturally offers.
+- These are advanced topics for a self-directed learner going deeper on their own, not a graduate school admissions preparation track. Favor tracks and resources with practical or applied value (e.g., specialized skills, applicable frameworks, real-world case studies) alongside theoretical depth — avoid resources that assume access to academic institutions, paid databases, or lab environments.
 
 ---
 
@@ -15,38 +13,53 @@ I will provide you with a Markdown document representing the **Advanced Topics**
 
 1. **Audit & Structure the Specialization Tracks:**
    - Organize advanced topics into 3–6 coherent subfields (e.g., for Psychology: *Neuropsychology & Cognitive Neuroscience*, *Clinical Science & Interventions*, *Computational & Mathematical Modeling*, *Social & Organizational Systems*).
-   - Provide an introductory bulleted index at the top with a 1-sentence description for each track.
-
+   - In the introductory index, briefly note that learners are expected to choose one or a few tracks aligned with their interests — not to complete every track.
+   - Provide an introductory bulleted index at the top with a 1-sentence description for each track. 
+   - Not every discipline naturally has 6 distinct advanced specializations. Use the number of tracks (3–6) and topics per track (3–5) as an upper bound, not a target to fill — only include a track or topic if it represents a genuinely distinct, well-differentiated area of specialization. It's acceptable for a discipline to have only 3 tracks, or a track to have only 3 topics, if that's what the field genuinely supports. Do not manufacture artificial tracks/topics just to hit a higher count.
 2. **Curate Advanced Resources:**
-   - For each track, curate **3–5 deep, high-impact topics**.
-   - For each topic, provide canonical graduate-level monographs, seminal survey papers, specialized toolkits, or advanced open courseware.
+   - For each track, curate **3–5 in-depth, high-value topics**.
+   - For each topic, select only the single best resource — advanced-level text or advanced open courseware, whichever is highest-signal for that topic.
+   - **Format flexibility:** Do not restrict resources to a single format (e.g., MOOCs only). Freely mix free YouTube lecture series, free MOOCs, open courseware and books, choosing whichever format best fits each topic.
+   - **Actively look for free courses/lectures, not just books:** Before defaulting to a book for a topic, actively check whether a free YouTube lecture series, free MOOC, or open courseware genuinely covers that topic at an advanced level. Only choose a book over a course when either (a) no adequate free course/lecture exists for that specific topic, or (b) the book is meaningfully more authoritative/complete than any available course. Do not default to a book just because it's the more obvious or familiar choice — the goal across the full curriculum is a reasonably even mix of books and courses, not a books-heavy list, unless the discipline genuinely lacks free course coverage.
+   - For applied/professional disciplines (e.g., Project Management, Public Administration, Library Studies, Nonprofit Management), prioritize specialized frameworks, professional-body standards/publications, and real-world case studies over academic papers.
    - Avoid general introductory textbooks (which belong to the core curriculum).
-
+   - Before including a topic, ask: does this represent genuinely specialized, advanced knowledge within this track — or is it something that's actually core-level knowledge (already covered in the Core Curriculum), or too niche/tangential to be worth including? If either, omit it rather than padding the track.
+   - **Accessibility:** Prioritize free / openly accessible resources — open-access papers, university OCW, free advanced MOOCs, and reputable open lecture series. Paid resources are acceptable primarily for **books/monographs** where no adequate free equivalent exists; avoid recommending paywalled journal articles or subscription-only databases as primary resources — if a seminal paper is paywalled, note the citation but pair it with a free accessible alternative or summary where possible.
+   - **Source quality:** When researching resources, avoid SEO-optimized filler articles, affiliate-marketing roundups, clickbait headlines, or generic listicle content. Favor subject-matter expert writing, academic sources, technical documentation, and credible specialized community discussion (e.g., well-moderated forums, Stack Exchange) where genuinely high-signal.
 3. **List Proposed Changes:**
    - Before outputting the revised markdown, explicitly list what tracks/topics you added, restructured, or pruned, along with a brief pedagogical justification.
-
+   - For each track, briefly note the free-vs-paid balance of the resources you selected. If a track ends up with mostly or entirely paid resources, explicitly state that you checked for free courses/lectures for those topics and found none adequate — do not skip this check silently.
 4. **Render the Revised Document:**
-   - Output the complete, enhanced document in clean Markdown.
-
----
+   - Output the complete, enhanced document using the heading + resource list format specified in the Formatting Constraints below — do not use tables, even if the input was formatted as tables.
 
 ### Strict Formatting Constraints
 
-1. **URL Accuracy:** Do NOT invent URLs. If a direct link is not 100% verified, provide the accurate Title + Author/Platform in plain text or link to the official domain/repository.
-2. **Table Format:** Use clean Markdown tables for each track with the following structure:
-   `| Topic | Why Study | Resources |`
-   - *Why Study:* 1–2 concise sentences explaining what the topic investigates and why it matters for advanced mastery.
-   - *Resources:* High-signal advanced books, papers, or courses (use `<br>- ` if listing multiple resources in one cell).
-3. **NO MathJax / LaTeX syntax:** Do NOT use the dollar sign ($). Write math and statistical concepts in plain text (e.g., `p-value`, `N > 10,000`, `alpha`).
-4. **NO numbered headings:** Do NOT number section headings (e.g., use `## Cognitive Neuroscience`, NOT `## 1. Cognitive Neuroscience` or `17. Subject`).
-5. **Language:** All output must be written in **English**.
-6. **Output Block:** Enclose the entire revised document in a single Markdown code block:
+1. **URL Accuracy:** Do NOT invent URLs.
+   - If you know the specific resource but are not 100% certain of its exact URL, do NOT link to the platform's homepage as a substitute — a homepage link paired with a specific title is misleading, since it won't take the learner to the actual resource. In this case, either (a) provide the precise URL only if you are genuinely confident it is correct, or (b) present the title in plain text (no link) with a note like "search '[Title]' on [Platform]" so the learner can find it directly.
+   - Only link to a platform's homepage or landing page when the entry is genuinely about the platform/hub as a whole, not when it's presented as a specific resource.
+   - **For paid/non-free books specifically:** if you are not certain of a direct link to a legitimate seller, publisher, or preview page, provide a Google Books link using the ISBN format: `https://books.google.com/books?isbn=[ISBN]` (e.g., `https://books.google.com/books?isbn=9780801482809`), so learners can easily locate and preview the book. Only use this fallback for paid books — free/open resources should always link directly to their actual source (OCW page, open-access PDF, etc.), not Google Books.
+2. **Resource List Format:** Present each track as a top-level heading (`## Track Name`) with a 1-sentence description, then list each topic and its resource(s) as separate lines, each separated by a blank line (no bullet/dash list markers):
+   ```markdown
+   ## Track Name
+
+   (1-sentence description of the track)
+
+   Topic Name: [Resource Title (Author/Platform)](URL) - short 1-sentence note on what it covers and why it matters for advanced mastery.
+
+   Topic Name: [Resource Title (Author/Platform)](URL)
+   ```
+   - Add a short descriptive note only when it adds real value; omit it if the title is already self-explanatory. When present, separate the note from the title with a hyphen (` - `), not an em dash.
+   - Each line is its own paragraph — do not prefix entries with `-`, `*`, or any other list marker.
+   - If a topic has two complementary resources, list them as two consecutive lines with the same "Topic Name:" prefix.
+3. **NO numbered headings:** Do NOT number section or track headings (e.g., use `## Clinical Science & Interventions`, NOT `## 1. Clinical Science & Interventions`).
+4. **Language:** All output must be written in **English**, using clear, natural phrasing at roughly a B2–C1 (upper-intermediate to advanced) reading level. Prefer plain, direct sentence structures over dense academic phrasing — but do not avoid or water down necessary field-specific terminology (e.g., "epistemology," "confounding variable," "case law") when it's the correct term for the concept; the goal is accessible sentence construction, not simplified vocabulary.
+5. **Output Block:** Enclose the entire revised document in a single Markdown code block:
 
 ```markdown
 (Revised document here)
 ```
 
----
+*Note: If any critical information is missing (e.g., number of tracks expected, discipline scope boundaries), ask clarification questions **before** proceeding.*
 
 Here is the draft document to review and improve:
 

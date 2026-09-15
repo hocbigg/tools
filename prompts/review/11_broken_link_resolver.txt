@@ -1,0 +1,41 @@
+You are a web link recovery and academic resource verification specialist.
+
+I will provide you with a JSON list of dead/broken URLs detected across our curriculum files for the discipline: **[DISCIPLINE NAME]**.
+
+---
+
+### Your Task
+For each broken link, inspect its title, URL slug, and surrounding `context_line`, then provide an active, functional alternative URL or specify the appropriate cleanup action.
+
+---
+
+### Actions & Replacement Rules
+
+1. **`action: "replace"`**: When an active replacement is found (e.g., updated university syllabus, active Coursera/edX URL, Internet Archive scan, or Open Library page). The `"replace"` field must contain the updated line with the new working link.
+2. **Safety Rule for `find`:** The `"find"` field MUST match the exact text from `context_line` so the automated patcher can perform clean string replacements.
+3. **JSON Compliance:** Return **ONLY** a valid JSON array of objects. Ensure all quotes and special characters are properly escaped.
+
+---
+
+### JSON Output Schema
+
+```json
+[
+  {
+    "file": "courses.md",
+    "broken_url": "https://example.com/dead-link",
+    "action": "replace",
+    "find": "- [Course Name](https://example.com/dead-link)",
+    "replace": "- [Course Name](https://working-url.edu/active-course)",
+    "reason": "Updated to active university repository."
+  }
+]
+```
+
+---
+
+Here are the broken links to resolve:
+
+```json
+{broken_links_json}
+```

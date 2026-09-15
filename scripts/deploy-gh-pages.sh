@@ -26,7 +26,7 @@ if [ -z "$REPO_DIR" ] || [ ! -d "$REPO_DIR/.git" ]; then
 fi
 
 TARGET_BRANCH="gh-pages"
-BUILD_SCRIPT="$SCRIPT_DIR/build.py" # Tên file python build của bạn
+BUILD_SCRIPT="$SCRIPT_DIR/generate_site.py" # Tên file python build của bạn
 
 if [ ! -f "$BUILD_SCRIPT" ]; then
     echo "❌ Lỗi: Không tìm thấy trình build tại '$BUILD_SCRIPT'."
@@ -108,8 +108,11 @@ if [ ! -d "$OUT_DIR" ]; then
     exit 1
 fi
 
-# Copy kết quả sang thư mục tạm an toàn
+# 1. Copy kết quả sang thư mục tạm an toàn
 cp -r "$OUT_DIR"/. "$TMP_DIR"/
+
+# 2. Xoá ngay thư mục out/ để dọn sạch working tree trước khi checkout
+rm -rf "$OUT_DIR"
 
 # ----------------------------------------------------------------------
 # 6. Đưa lên nhánh gh-pages
@@ -159,4 +162,4 @@ fi
 echo "↩️  Quay lại branch '$INITIAL_BRANCH'..."
 git checkout "$INITIAL_BRANCH"
 
-echo "✨ Deploy hoàn tất thành công!"
+echo "✨ Deploy thành công!"
