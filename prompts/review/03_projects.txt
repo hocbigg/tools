@@ -6,7 +6,7 @@ I will provide you with a Markdown document containing a draft list of **Project
 
 ### Context
 
-- **Target Audience:** Self-directed learners (self-taught individuals, polymaths, and career-changers) who have studied the core and/or advanced topics in [DISCIPLINE NAME] and want to apply their knowledge through concrete, tangible projects.
+- **Target Audience:** Self-directed learners who have studied the core and/or advanced topics in [DISCIPLINE NAME] and want to apply their knowledge through concrete, tangible projects.
 - This is not a classroom assignment list — projects should be things a learner can pursue independently, without an instructor, cohort, or institutional access.
 - **Handling Incomplete or Empty Drafts:** If the input draft is empty, sparse, or contains only generic/theoretical entries without actionable guides, you must research and populate high-quality project guides from scratch across relevant thematic domains.
 
@@ -24,22 +24,22 @@ I will provide you with a Markdown document containing a draft list of **Project
 1. **Audit & Prune the Draft:**
    - Remove vague, purely theoretical assignments that lack actionable guidance.
    - Retain and curate high-quality, step-by-step guides, published methodological walkthroughs, or public open-source project templates.
-
-2. **Categorize by Tangible Outcome:**
-   - First, check whether the input draft already has category/thematic headings. If they exist and are already phrased around a concrete artifact or deliverable (e.g., "Write a Policy Brief"), preserve and refine them rather than replacing them with new ones.
-   - Where the draft's existing categories are missing, too generic, or named after academic methods rather than outcomes, rename or restructure them to reflect the concrete artifact or deliverable a learner would produce, phrased in plain, actionable language — e.g., *Write a Rhetorical/Textual Analysis*, *Conduct an Interview Study*, *Curate a Primary-Source Archive*, *Write a Policy Brief*, *Run a Program Evaluation*, *Produce a Professional Deliverable (e.g., grant proposal, project charter)*.
-   - Name categories after what the learner builds or produces, not the academic method behind it. Avoid method-driven names like "Empirical Replication" or "Qualitative Fieldwork & Survey Design" — prefer direct, actionable phrasing like "Conduct a Small Research Study" or "Run a Field Interview Project."
-   - The number of guides per category is not fixed — include as many high-quality guides as genuinely exist, and as few as necessary if strong options are limited.
-
+2. **Categorize by a Single, Atomic Artifact & Rebuild Table of Contents:**
+   - **Rebuild Top-Level Table of Contents (TOC):** Completely reconstruct the TOC list at the top of the file. Every single section heading must have an exact corresponding anchor link in the format: `* [<Heading Name>](#<kebab-case-anchor>)`.
+   - **Atomic Headings Rule (One Deliverable per Section):** Headings must represent **one single, concrete, and distinct artifact or practice** (e.g., `Design your own lesson plans`, `Construct your own scoring rubrics`, `Write your own syllabus`).
+   - **Strictly NO Compound Headings:** NEVER combine two separate deliverables using "and", "&", "or", or slashes "/".
+     - *Bad:* `## Design a Lesson Plan and Instructional Sequence`
+     - *Good:* `## Design your own lesson plans`
+     - *Bad:* `## Build a Course Syllabus and Curriculum Blueprint`
+     - *Good:* `## Build your own course syllabi`
+   - Name categories after *what the learner builds or produces*, not abstract academic methodologies. Avoid method-driven names like "Qualitative Fieldwork" — use direct artifact names like `Conduct your own field interviews`.
 3. **Curate High-Signal Project Guides (GitHub `build-your-own-x` Style):**
    - For each entry, provide a clean Markdown link to an existing tutorial, step-by-step methodology guide, or public project walkthrough: `[Project / Guide Name](URL)`.
    - Keep entries clean and direct—let the project title and guide speak for itself so learners can independently explore.
    - **Accessibility:** Prioritize free, publicly accessible guides and templates (blog walkthroughs, university-published assignments, open GitHub-style repositories, nonprofit/professional-body resources). Paid resources should only be included if they are exceptionally high-signal and have no adequate free alternative — flag any paid entry explicitly.
    - **Source quality:** Avoid SEO-optimized "project idea" listicles, affiliate-driven blogs, or clickbait roundups with no real depth. Prioritize actual step-by-step walkthroughs from subject-matter experts, official documentation/templates, and real practitioner write-ups (e.g., well-regarded personal blogs, specialized forums, GitHub-style repositories) that show real methodology, not just a list of ideas.
-
 4. **List Proposed Changes:**
    - Briefly list which project guides were added, removed, or reorganized and why.
-
 5. **Render the Revised Document:**
    - Output the complete, enhanced document in clean Markdown.
 
@@ -50,13 +50,25 @@ I will provide you with a Markdown document containing a draft list of **Project
 1. **URL Accuracy:** Do NOT invent or hallucinate URLs.
    - If you know the specific guide/article/template but are not 100% certain of its exact URL, do NOT link to the platform's homepage as a substitute — a homepage link paired with a specific title is misleading, since it won't take the learner to the actual guide. In this case, either (a) provide the precise URL only if you are genuinely confident it is correct, or (b) present the title in plain text (no link) with a note like "search '[Title]' on [Platform]" so the learner can find it directly.
    - Only link to a platform's homepage or landing page when the entry is genuinely about the platform/hub as a whole (e.g., recommending an entire resource hub to browse), not when it's presented as a specific guide.
-2. **List Structure (`build-your-own-x` Style):** Format projects as clean bulleted Markdown lists under thematic headings:
-```markdown
-   ## Thematic Domain Name
+2. **Document Structure & Anchor Rules (`build-your-own-x` Style):**
+   - The document MUST begin with an H1 title, an optional brief quote/intro, and the **complete reconstructed Table of Contents (TOC)**, followed by the content sections:
+   ```markdown
+   # Projects
+
+   > "What I cannot create, I do not understand." — Richard Feynman
+
+   * [<Verb> your own <single artifact>](#<anchor-slug>)
+   * [<Verb> your own <single artifact>](#<anchor-slug>)
+
+   ## <Verb> your own <single artifact>
 
    - [Project / Guide Name](URL)
    - [Project / Guide Name](URL)
-```
+   ```
+   - **Anchor Slug Rules:** Anchor links must be lowercase, replace spaces with hyphens `-`, and strip all special characters/punctuation (e.g., `## Design your own lesson plans` $\rightarrow$ `(#design-your-own-lesson-plans)`).
+   - **Heading Syntax Constraints:** 
+     - Follow the actionable pattern: `## <Verb> your own <artifact>`.
+     - **NO compound headings:** Do NOT join multiple artifacts with "and", "&", "or", or "/".
 3. **NO numbered headings:** Do NOT number section headings (e.g., use `## Rhetorical Criticism & Textual Analysis`, NOT `## 1. Rhetorical Criticism`).
 4. **Language:** All output must be written in **English**, using clear, natural phrasing at roughly a B2–C1 (upper-intermediate to advanced) reading level. Prefer plain, direct sentence structures over dense academic phrasing — but do not avoid or water down necessary field-specific terminology (e.g., "epistemology," "confounding variable," "case law") when it's the correct term for the concept; the goal is accessible sentence construction, not simplified vocabulary.
 5. **Output Block:** Enclose the entire revised document in a single Markdown code block:

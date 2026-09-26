@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
-Single-file Static Site Generator for GitHub Pages (Root & Project Pages)
+Static Site Generator for Individual Curriculum Repositories (Project Pages).
 Features:
-- Zero JavaScript, Semantic HTML & Accessibility (A11y) optimized.
-- Inlined CSS with auto Dark Mode support and keyboard navigation focus.
-- Dynamic canonical URLs, OpenGraph metadata, sitemap.xml & robots.txt.
+- Standalone single-file build tool for course/curriculum projects.
+- Auto-generates navigation tabs from project markdown structure.
+- Shows file modification date ('Last updated on') on project index.
+- Inlined CSS, Semantic HTML & Accessibility (A11y) optimized.
+- Generates dynamic canonical URLs, OpenGraph tags, sitemap.xml & robots.txt.
 """
 
 import argparse
@@ -12,11 +14,14 @@ import html
 import re
 import shutil
 import sys
-from datetime import date
+from datetime import datetime, date
 from pathlib import Path
 import markdown
 import yaml
 
+# ==============================================================================
+# INLINED STYLESHEET (Dán nội dung CSS của bạn vào đây)
+# ==============================================================================
 INLINED_CSS = """
 :root {
   color-scheme: light dark;
@@ -289,6 +294,9 @@ blockquote {
 }
 """
 
+# ==============================================================================
+# HTML BASE TEMPLATES
+# ==============================================================================
 HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="{{language}}">
 <head>
@@ -338,7 +346,9 @@ PAGE_HEADER_TEMPLATE = """<header class="page-header">
   <p class="last-updated"><small>Last updated on: <time datetime="{date_iso}">{date_iso}</time></small></p>
 </header>"""
 
-
+# ==============================================================================
+# NAVIGATION TABS CONFIGURATION
+# ==============================================================================
 CUSTOM_LABELS = {
     "advanced_topics.md": "Advanced Topics",
     "projects.md": "Projects",
@@ -394,7 +404,6 @@ def enhance_external_links(html_text: str) -> str:
             return m.group(0)
         return f'<a {attrs}href="{url}" target="_blank" rel="noopener noreferrer"'
 
-    # Inject attributes
     html_text = re.sub(r'<a\s+([^>]*?)href="(https?://[^"]+)"', repl, html_text)
     return html_text
 
@@ -407,13 +416,13 @@ def wrap_tables(html_text: str) -> str:
         html_text
     )
 
+
 def get_tab_label(rel_path: Path) -> str:
     """Xác định nhãn của Tab dựa trên CUSTOM_LABELS hoặc fallback tự động."""
     posix_path = rel_path.as_posix()
     if posix_path in CUSTOM_LABELS:
         return CUSTOM_LABELS[posix_path]
 
-    # Fallback tự động cho các file mới thêm vào sau này (ví dụ: extras/notes.md -> Extra Notes)
     parts = []
     for parent in rel_path.parent.parts:
         parts.append(parent.rstrip('s').replace('_', ' ').replace('-', ' ').title())
@@ -421,18 +430,16 @@ def get_tab_label(rel_path: Path) -> str:
     return " ".join(parts)
 
 
-def build_nav(is_root: bool, page_name: str, root_dir: Path, base_prefix: str) -> str:
-    """Tự động quét các file .md để tạo Navbar theo cấu trúc: [Hocbigg] | [Project] | [Tabs...] | [GitHub]"""
+def build_nav(page_name: str, root_dir: Path, base_prefix: str) -> str:
+    """Tạo Navbar: [Hocbigg] | [Tên Curriculum] | [Tabs...] | [GitHub Repo]"""
+    project_title = page_name.replace("_", " ").replace("-", " ").title()
+
     items = [
-        '      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>'
+        '      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>',
+        f'      <li><a href="{base_prefix}">{project_title}</a></li>'
     ]
 
-    # 1. Tên Project (Trỏ về trang chủ của Project đó)
-    if not is_root and page_name:
-        project_title = page_name.replace("_", " ").replace("-", " ").title()
-        items.append(f'      <li><a href="{base_prefix}">{project_title}</a></li>')
-
-    # 2. Tự động thu thập các file .md làm Tab (Bỏ qua README.md và thư mục out/assets)
+    # Quét tất cả file .md (bỏ qua index/readme và out/assets)
     tabs = []
     for md_path in root_dir.rglob("*.md"):
         if md_path.name.lower() in ["readme.md", "index.md"]:
@@ -445,7 +452,6 @@ def build_nav(is_root: bool, page_name: str, root_dir: Path, base_prefix: str) -
         html_url = f"{base_prefix}{rel_path.with_suffix('.html').as_posix()}"
         tabs.append((label, html_url))
 
-    # Sắp xếp các Tab theo đúng thứ tự ưu tiên trong NAV_ORDER
     def sort_key(item):
         label = item[0]
         if label in NAV_ORDER:
@@ -457,7 +463,7 @@ def build_nav(is_root: bool, page_name: str, root_dir: Path, base_prefix: str) -
     for label, url in tabs:
         items.append(f'      <li><a href="{url}">{label}</a></li>')
 
-    # 3. GitHub Link ở cuối
+    # Trỏ đúng GitHub repo của curriculum hiện tại
     items.append(
         f'      <li><a href="https://github.com/hocbigg/{page_name}" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>'
     )
@@ -466,48 +472,34 @@ def build_nav(is_root: bool, page_name: str, root_dir: Path, base_prefix: str) -
 
 
 # ==============================================================================
-# MAIN BUILD PIPELINE
+# MAIN PIPELINE
 # ==============================================================================
 
 def main():
-    parser = argparse.ArgumentParser(description="Build static site for GitHub Pages.")
-    parser.add_argument("page", help="Repo folder name or '.' / 'root' for user page (hocbigg.github.io)")
+    parser = argparse.ArgumentParser(description="Build curriculum project page for GitHub Pages.")
+    parser.add_argument("curriculum", help="Directory name of the curriculum repo (e.g. ancient-greek)")
     args = parser.parse_args()
 
-    page_arg = args.page.strip("/").strip()
-    
-    # 1. Phân biệt kiểu trang: Root domain (hocbigg.github.io) hay Project con
-    is_root = page_arg in [".", "", "root", "hocbigg.github.io", "01_homepage"]
+    page_arg = args.curriculum.strip("/").strip()
+    ROOT = Path.cwd() / page_arg if not Path(page_arg).is_absolute() else Path(page_arg)
 
-    # 2. Tách biệt logic: ROOT luôn trỏ đúng vào thư mục cần build
-    if page_arg in [".", ""]:
-        ROOT = Path.cwd()
-    else:
-        ROOT = Path.cwd() / page_arg
+    if not ROOT.exists() or not ROOT.is_dir():
+        print(f"[..] Error: Curriculum directory '{ROOT}' does not exist.")
+        sys.exit(1)
 
-    # 3. BASE_URL và BASE_PREFIX chỉ dùng để phục vụ SEO & liên kết
-    if is_root:
-        BASE_URL = "https://hocbigg.github.io/"
-        BASE_PREFIX = "/"
-    else:
-        BASE_URL = f"https://hocbigg.github.io/{page_arg}/"
-        BASE_PREFIX = f"/{page_arg}/"
-
+    BASE_URL = f"https://hocbigg.github.io/{page_arg}/"
+    BASE_PREFIX = f"/{page_arg}/"
     OUT = ROOT / "out"
     ASSETS = ROOT / "assets"
     IMAGES = ROOT / "images"
 
-    if not ROOT.exists():
-        print(f"[..] Error: Root path '{ROOT}' does not exist.")
-        sys.exit(1)
-
     OUT.mkdir(exist_ok=True, parents=True)
 
-    print(f"[..] Building site: {'(Root Site)' if is_root else page_arg}")
-    print(f"[..] Base URL: {BASE_URL}")
-    print(f"[..] Output:   {OUT}\n")
+    print(f"[..] Building Curriculum: {page_arg}")
+    print(f"[..] Base URL:            {BASE_URL}")
+    print(f"[..] Output directory:    {OUT}\n")
 
-    # 1. Copy Assets & Images if present
+    # 1. Copy Assets & Images
     if ASSETS.exists():
         shutil.copytree(ASSETS, OUT / "assets", dirs_exist_ok=True)
         print("[x] Copied assets/")
@@ -522,19 +514,17 @@ def main():
         output_format="html5"
     )
 
-    nav_html = build_nav(is_root, page_arg, ROOT, BASE_PREFIX)
+    nav_html = build_nav(page_arg, ROOT, BASE_PREFIX)
     generated_urls = []
 
     # 3. Process Markdown files
     for md_path in ROOT.rglob("*.md"):
-        # Ignore output directory & assets
         if OUT in md_path.parents or "assets" in md_path.parts:
             continue
 
         rel_path = md_path.relative_to(ROOT)
         is_readme = md_path.name.lower() == "readme.md"
 
-        # Determine target HTML path & canonical URL
         if is_readme:
             if rel_path.parent == Path("."):
                 out_path = OUT / "index.html"
@@ -549,41 +539,37 @@ def main():
         out_path.parent.mkdir(parents=True, exist_ok=True)
         canonical_url = BASE_URL + page_rel_url
 
-        # Parse content
         raw_text = md_path.read_text(encoding="utf-8")
         meta, body = parse_front_matter(raw_text)
 
-        # Markdown to HTML
         md.reset()
         content_html = md.convert(body)
         content_html = rewrite_internal_md_links(content_html)
         content_html = enhance_external_links(content_html)
         content_html = wrap_tables(content_html)
 
-        # Metadata resolution
         if "title" in meta:
             title = str(meta["title"])
         else:
             h1 = extract_h1(body)
             title = h1 if h1 else md_path.stem.replace("_", " ").replace("-", " ").title()
 
-        description = meta.get("description", "A lightweight static page by hocbigg.")
+        description = meta.get("description", f"{title} curriculum by hocbigg.")
         author = meta.get("author", "hocbigg")
         language = meta.get("language", "en")
 
-        today_iso = date.today().isoformat()
+        # Lấy ngày sửa đổi thực tế của file README.md bằng Python chuẩn
+        file_mtime = datetime.fromtimestamp(md_path.stat().st_mtime).strftime("%Y-%m-%d")
 
         header_html = (
             PAGE_HEADER_TEMPLATE.format(
-                base_prefix=BASE_PREFIX,
                 title=html.escape(title),
-                date_iso=today_iso
+                date_iso=file_mtime
             )
             if is_readme and rel_path.parent == Path(".")
             else ""
         )
 
-        # Render Full Page
         rendered_html = (
             HTML_TEMPLATE
             .replace("{{language}}", html.escape(language))
@@ -622,8 +608,11 @@ def main():
     (OUT / "robots.txt").write_text(robots_content, encoding="utf-8")
     print("[x] Generated robots.txt")
 
-    print("\nBuild completed successfully!")
+    print("\nCurriculum build completed successfully!")
 
 
 if __name__ == "__main__":
     main()
+
+
+

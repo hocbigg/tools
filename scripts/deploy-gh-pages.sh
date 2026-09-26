@@ -26,7 +26,17 @@ if [ -z "$REPO_DIR" ] || [ ! -d "$REPO_DIR/.git" ]; then
 fi
 
 TARGET_BRANCH="gh-pages"
-BUILD_SCRIPT="$SCRIPT_DIR/generate_site.py" # Tên file python build của bạn
+
+# Tự động điều phối trình build phù hợp:
+REPO_NAME=$(basename "$REPO_DIR")
+
+if [[ "$REPO_NAME" == "01_homepage" || "$REPO_NAME" == "hocbigg.github.io" ]]; then
+    BUILD_SCRIPT="$SCRIPT_DIR/build-homepage.py"
+    echo "ℹ️  Sử dụng trình build: build-homepage.py"
+else
+    BUILD_SCRIPT="$SCRIPT_DIR/build-curriculum.py"
+    echo "ℹ️  Sử dụng trình build: build-curriculum.py"
+fi
 
 if [ ! -f "$BUILD_SCRIPT" ]; then
     echo "❌ Lỗi: Không tìm thấy trình build tại '$BUILD_SCRIPT'."

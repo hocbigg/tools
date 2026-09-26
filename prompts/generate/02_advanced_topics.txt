@@ -15,13 +15,13 @@ I will give you the name of a discipline: **[DISCIPLINE NAME]**. Your job is to 
 ### Your Tasks
 
 1. **Design the Specialization Tracks**
-   - Organize advanced topics into coherent subfields (typically 3–6 tracks; not every discipline naturally has 6 distinct specializations — use this as an upper bound, not a target to fill).
+   - Organize advanced topics into coherent subfields.
    - Only include a track if it represents a genuinely distinct, well-differentiated area of specialization. It's acceptable for a discipline to have only 3 tracks if that's what the field genuinely supports — do not manufacture artificial tracks just to hit a higher count.
    - Provide an introductory bulleted index at the top with a 1-sentence description for each track.
 
 2. **Curate Advanced Resources**
-   - For each track, curate 3–5 in-depth, high-value topics (again, an upper bound, not a target — only include topics that are genuinely distinct and advanced, not core-level knowledge repackaged, and not too niche/tangential to be worth including).
-   - For each topic, select only the single best resource — advanced-level text, influential paper/report, specialized practical toolkit, or advanced open courseware, whichever is highest-signal for that topic. Include a second resource only if it is genuinely complementary and non-redundant (e.g., one primary text + one practical toolkit) — never stack multiple resources of the same type for the same topic.
+   - For each track, curate 3–6 in-depth, high-value topics (again, an upper bound, not a target — only include topics that are genuinely distinct and advanced, not core-level knowledge repackaged, and not too niche/tangential to be worth including).
+   - For each topic, select only the single best resource — advanced-level text, or advanced open courseware, whichever is highest-signal for that topic. Include a second resource only if it is genuinely complementary and non-redundant (e.g., one primary text + one practical toolkit) — never stack multiple resources of the same type for the same topic.
    - **Format flexibility:** Do not restrict resources to a single format (e.g., MOOCs only). Freely mix free YouTube lecture series, free MOOCs, open courseware, papers/reports, and books, choosing whichever format best fits each topic.
    - **Actively look for free courses/lectures, not just books:** Before defaulting to a book for a topic, actively check whether a free YouTube lecture series, free MOOC, or open courseware genuinely covers that topic at an advanced level. Only choose a book over a course when either (a) no adequate free course/lecture exists for that specific topic, or (b) the book is meaningfully more authoritative/complete than any available course. Do not default to a book just because it's the more obvious or familiar choice — the goal across the full page is a reasonably even mix of books and courses, not a books-heavy list, unless the discipline genuinely lacks free course coverage.
    - For applied/professional disciplines (e.g., Project Management, Public Administration, Library Studies, Nonprofit Management), prioritize specialized frameworks, professional-body standards/publications, and real-world case studies over academic papers.

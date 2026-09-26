@@ -28,7 +28,7 @@ Avoid repeating information that's already obvious from the subject list itself 
 ### Formatting Constraints
 
 1. **No numbered headings or numbered lists** for any subsections you choose to include.
-2. **Language:** Write in clear, natural English at roughly a B2–C1 reading level. Prefer plain, direct sentences over dense or promotional phrasing — avoid a "welcome to this course!" marketing tone.
+2. **Language:** All output must be written in **English**, using clear, natural phrasing at roughly a B2–C1 (upper-intermediate to advanced) reading level. Prefer plain, direct sentence structures over dense academic phrasing — but do not avoid or water down necessary field-specific terminology when it's the correct term for the concept.
 3. **Do not invent facts** about the curriculum's structure, subjects, or resources — base everything on what's actually in the curriculum above.
 4. **Cross-references to other pages:** When mentioning Advanced Topics, Projects, Readings, or Courses, always format them as Markdown links using these exact paths, not plain bold text:
    - Advanced Topics → `[Advanced Topics](advanced_topics.md)`
