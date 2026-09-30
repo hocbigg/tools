@@ -208,6 +208,13 @@ a:has(img) {
   margin-bottom: 2rem;
 }
 
+.page-header .page-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -343,6 +350,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 PAGE_HEADER_TEMPLATE = """<header class="page-header">
   <img src="/images/logo.png" alt="Hocbigg logo">
   <h1>{title}</h1>
+  <p class="page-subtitle">{description}</p>
   <p class="last-updated"><small>Last updated on: <time datetime="{date_iso}">{date_iso}</time></small></p>
 </header>"""
 
@@ -564,6 +572,7 @@ def main():
         header_html = (
             PAGE_HEADER_TEMPLATE.format(
                 title=html.escape(title),
+                description=description,
                 date_iso=file_mtime
             )
             if is_readme and rel_path.parent == Path(".")

@@ -452,7 +452,7 @@ def main():
     print(f"[..] Base URL:          {BASE_URL}")
     print(f"[..] Output directory:  {OUT}\n")
 
-    # 1. Copy Assets & Images
+    # 1. Copy Assets, Images & 404.html
     if ASSETS.exists():
         shutil.copytree(ASSETS, OUT / "assets", dirs_exist_ok=True)
         print("[x] Copied assets/")
@@ -460,6 +460,12 @@ def main():
     if IMAGES.exists():
         shutil.copytree(IMAGES, OUT / "images", dirs_exist_ok=True)
         print("[x] Copied images/")
+
+    # Tự động phát hiện và đưa 404.html vào out/
+    NOT_FOUND_FILE = ROOT / "404.html"
+    if NOT_FOUND_FILE.exists():
+        shutil.copy2(NOT_FOUND_FILE, OUT / "404.html")
+        print("[x] Copied 404.html")
 
     # 2. Markdown engine setup
     md = markdown.Markdown(
